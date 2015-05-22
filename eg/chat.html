@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="chat.css">
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="datadumper.js"></script>
-<script type="text/javascript" src="../lib/rivescript.js"></script>
+<script type="text/javascript" src="../dist/rivescript.js"></script>
 </head>
 <body>
 
@@ -65,13 +65,8 @@ var rs = new RiveScript({
 
 // Load our files from the brain/ folder.
 rs.loadFile([
-	"brain/begin.rive",
-	"brain/admin.rive",
-	"brain/clients.rive",
-	"brain/eliza.rive",
-	"brain/myself.rive",
-	"brain/rpg.rive",
-	"brain/javascript.rive"
+	"terra/begin.rive",
+	"terra/veronika.rive",
 	], on_load_success, on_load_error);
 
 function on_load_success () {
@@ -95,7 +90,7 @@ function sendMessage () {
 	try {
 	var reply = rs.reply("soandso", text);
 	reply = reply.replace(/\n/g, "<br>");
-	$("#dialogue").append("<div><span class='bot'>Bot:</span> " + reply + "</div>");
+	$("#dialogue").append("<div><span class='bot'>Veronika:</span> " + reply + "</div>");
 	$("#dialogue").animate({ scrollTop: $("#dialogue").height() }, 1000);
 	} catch(e) {
 		window.alert(e.message + "\n" + e.line);

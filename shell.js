@@ -53,6 +53,7 @@ function loading_done(batch_num) {
 	rl.setPrompt("You> ");
 	rl.prompt();
 	rl.on("line", function(cmd) {
+		console.log('>>>>>',cmd);
 		// Handle commands.
 		if (cmd === "/help") {
 			help();
